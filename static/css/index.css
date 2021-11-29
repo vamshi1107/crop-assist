@@ -1,0 +1,191 @@
+.cardcon {
+  width: 100vw;
+  background-color: red;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav {
+  width: 100%;
+  height: 70px;
+  background-color: aqua;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  filter: blur(20);
+}
+
+body.stop {
+  overflow-y: hidden;
+}
+
+.rescard {
+  width: 80vw;
+  height: 70vh;
+}
+
+.result {
+  width: 80vw;
+  height: 70vh;
+}
+
+.imform {
+  margin-top: 300px;
+}
+
+.home {
+  width: 100vw;
+  overflow: hidden;
+  height: 70vh;
+  background-color: aqua;
+}
+
+.card {
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px;
+  transition-property: all;
+  transition: 0.5s ease;
+  overflow: hidden;
+}
+
+.card.open {
+  width: 80vw;
+  height: 90vh;
+  position: fixed;
+  z-index: 99;
+  top: 5vh;
+  border: 1px solid grey;
+  animation: animate 0.5s ease;
+  transition-property: all;
+  overflow: hidden;
+  transition: 0.5s ease;
+}
+
+@keyframes animate {
+  from {
+    top: 50vh;
+    width: 300px;
+  }
+  to {
+    top: 5vh;
+    width: 80vw;
+  }
+}
+
+.card > .hid {
+  width: 0px;
+  height: 0px;
+  visibility: hidden;
+}
+
+.card > .cls {
+  visibility: hidden;
+  transform: rotate(90deg);
+  width: fit-content;
+  height: fit-content;
+  font-size: 3rem;
+  float: right;
+  margin: 10px 20px;
+  transform: rotateZ(45deg);
+  cursor: pointer;
+}
+
+.card.open > .cls {
+  visibility: visible;
+}
+
+.card.open > .hid {
+  width: 100%;
+  visibility: visible;
+  height: 100%;
+}
+
+.outer {
+  display: flex;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.form {
+  margin: 10px auto;
+}
+
+.feild {
+  width: 300px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feild > input {
+  width: 300px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.feild > label {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.feild > select {
+  width: 300px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.fertform {
+  width: 50%;
+  height: 100%;
+  flex: 1;
+}
+
+.fert_res {
+  flex: 1;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  background-color: red;
+}
+
+.whcrop {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
+}
+
+.cropres {
+  width: 50%;
+  flex: 1;
+}
+
+.cropform {
+  flex: 1;
+  width: 50%;
+  overflow-y: auto;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+}
+
+.feild > button {
+  width: 300px;
+  height: 50px;
+  margin-bottom: 200px;
+  margin-left: 10px;
+}
