@@ -39,6 +39,9 @@
                 var values = { "n": n, "p": p, "k": k, "c": c }
                 $.get("/fertresult?n=" + n + "&p=" + p + "&k=" + k + "&c=" + c).then(res => {
                     console.log(res)
+                    var r = "<div class='rmain'>" + "<b>" + res.result + "</b>" + res.ver + "</div>"
+                    var desc = "<div>" + res.desc + "</div>"
+                    $(".fert_res").html(r + desc)
                 })
                 e.preventDefault()
             }

@@ -51,10 +51,12 @@
             var phvalue = form["phvalue"].value
             var rainfall = form["rainfall"].value
 
-            var url = "/croprecomnder?ni=" + n1 + "&p=" + p + "&k=" + k + "&temp=" + temp + "&h=" + h + "&phvalue=" + phvalue + "&rainfall=" + rainfall
+            var url = "/croprecomnder?ni=" + ni + "&p=" + p + "&k=" + k + "&temp=" + temp + "&h=" + h + "&phvalue=" + phvalue + "&rainfall=" + rainfall
 
             $.get(url).then(res => {
-                console.log(res)
+                var res = `<div class='renm'>${res.result}</div><div class='imk'><img src='${res.img}'></div>`
+                $(".cropres").html(res)
+
             })
         }
     </script>

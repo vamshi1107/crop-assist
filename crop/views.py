@@ -63,23 +63,22 @@ class crop:
 
 
 def croprecomnder(request):
-    result = [0, 0]
-    if request.method == 'POST':
-        n = float(request.POST.get('Ni'))
-        p = float(request.POST.get('p'))
-        k = float(request.POST.get('k'))
-        temp = float(request.POST.get('temp'))
-        humidity = float(request.POST.get('h'))
-        ph = float(request.POST.get('phvalue'))
-        rain = float(request.POST.get('rainfall'))
+        result = {"name":"","img":""}
+        print(request.GET)
+        n = float(request.GET.get('ni'))
+        p = float(request.GET.get('p'))
+        k = float(request.GET.get('k'))
+        temp = float(request.GET.get('temp'))
+        humidity = float(request.GET.get('h'))
+        ph = float(request.GET.get('phvalue'))
+        rain = float(request.GET.get('rainfall'))
         c = crop(n, p, k, temp, humidity, ph, rain)
         name = c.predict()[0]
         result = {}
         for i in crops:
             if i["name"].lower() == name.lower():
                 result = i
-        print(name)
-    return JsonResponse({'result': result["name"].upper(), "img": result["img"]})
+        return JsonResponse({'result': result["name"].upper(), "img": result["img"]})
 
 
 def convert(img):
